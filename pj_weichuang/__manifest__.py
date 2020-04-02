@@ -16,6 +16,7 @@
     "depends": [
         "base",
         "mail",
+        "sale",
         "product",
     ],
     "data": [
@@ -23,7 +24,11 @@
         # "data/res_groups_data.xml",
         "views/product_product.xml",
         "views/dealer_record.xml",
+        "views/logistic_company.xml",
         "views/menuitem.xml",
+        "views/res_partner.xml",
+        "wizard/send_goods.xml",
+        "views/sale_order.xml",
     ],
     # "demo": [
     #     'demo/export_demo.xml',

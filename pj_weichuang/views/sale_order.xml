@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--订单视图-->
+   <record id="weichuang_sale_order" model="ir.ui.view">
+        <field name="name">weichuang.sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(action_send_goods_wizard)d" type="action" string="开始发货" class="oe_link"/>
+            </xpath>
+            <field name="partner_id" position="after">
+                <field name="logistic_company_id" />
+                <field name="logistic_no" />
+            </field>
+            <field name="payment_term_id" position="after">
+                <field name="logistic_text" />
+            </field>
+        </field>
+    </record>
+</odoo>

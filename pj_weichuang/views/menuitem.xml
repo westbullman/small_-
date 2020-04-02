@@ -10,11 +10,22 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+
+    <menuitem name="基础档案"
+    id="base_record"
+    sequence="9"/>
+
     <menuitem name="热门产品"
         id="hot_product_product"
         action="action_hot_product"
-        sequence="3"/>
+        parent = "pj_weichuang.base_record"
+        sequence="1"/>
 
+    <menuitem name="物流公司"
+        id="menu_logistic_company"
+        action="action_logistic_company"
+        parent = "pj_weichuang.base_record"
+        sequence="2"/>
 
     <!--渠道商-->
     <record id="action_channel_provider" model="ir.actions.act_window">

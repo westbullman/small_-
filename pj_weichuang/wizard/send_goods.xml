@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- wizard view -->
+        <record id="view_send_goods_form" model="ir.ui.view">
+            <field name="name">发货</field>
+               <field name="model">send.goods</field>
+                <field name="arch" type="xml">
+                    <form string="发货">
+                        <span class="o_form_label">点击确定进行发货!</span>
+                        <group>
+                            <field name="logistic_company_id" required="1" options="{'no_create': True}" />
+                        </group>
+                        <group>
+                            <field name="logistic_no" required="1"/>
+                        </group>
+                        <footer>
+                            <button name="confirm" string="确定发货" type="object" class="oe_highlight" />
+                            <button special="cancel" string="取消" class="btn-primary"/>
+                        </footer>
+                    </form>
+                </field>
+        </record>
+
+        <record id="action_send_goods_wizard" model="ir.actions.act_window">
+            <field name="name">Send Goods</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">send.goods</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_send_goods_form"/>
+            <field name="target">new</field>
+        </record>
+
+</odoo>
