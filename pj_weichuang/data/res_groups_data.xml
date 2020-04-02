@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="can_interface" model="res.groups">
+            <field name="name">推送接口</field>
+        </record>
+    </data>
+</odoo>

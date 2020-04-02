@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--热门产品-->
+    <record id="action_hot_product" model="ir.actions.act_window">
+        <field name="name">Hot Product</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('hot_product','=',True)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="热门产品"
+        id="hot_product_product"
+        action="action_hot_product"
+        sequence="3"/>
+
+
+    <!--渠道商-->
+    <record id="action_channel_provider" model="ir.actions.act_window">
+        <field name="name">Channel Provider</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('customer','=',True)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="渠道商"
+        id="channel_provider"
+        action="action_channel_provider"
+        sequence="4"/>
+
+</odoo>

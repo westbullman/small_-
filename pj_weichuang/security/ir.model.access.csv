@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dealer_record_user,dealer.record,model_dealer_record,base.group_user,1,1,1,1
+access_prodcut_image_user,product.image,model_product_image,base.group_user,1,1,1,1
