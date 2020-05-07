@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dealer_record_tree" model="ir.ui.view">
+        <field name="name">dealer.record.tree</field>
+        <field name="model">dealer.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" string="序号"/>
+                <field name="name"/>
+                <field name="bianma"/>
+                <field name="vat" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="dealer_record_form" model="ir.ui.view">
+        <field name="name">dealer.record.form</field>
+        <field name="model">dealer.record</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="bianma" required="1"/>
+                        <label for="street" string="地址"/>
+                            <div class="o_address_format">
+                               <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True}'/>
+                               <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                               <field name="city" widget="city_picker" placeholder="City" class="o_address_city"/>
+                               <field name="street2" placeholder="Street 2..." class="o_address_state"/>
+                               <field name="street" placeholder="Street..." class="o_address_street"/>
+                            </div>
+                    </group>
+                    <group>
+                        <field name="vat" required="1"/>
+                        <field name="mobile" required="1"/>
+                        <field name="business_license_image"  widget="image" options='{"size": [100, 150]}'/>
+                        <field name="qr_code"  widget="image" options='{"size": [100, 150]}'/>
+                    </group>
+                </group>
+                 <notebook>
+                        <page string="渠道商">
+                            <field  name="partner_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="mobile"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dealer_record" model="ir.actions.act_window">
+        <field name="name">经销商</field>
+        <field name="res_model">dealer.record</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="经销商"
+        id="Dealer_record_menu"
+        action="action_dealer_record"
+        sequence="2"/>
+
+</odoo>

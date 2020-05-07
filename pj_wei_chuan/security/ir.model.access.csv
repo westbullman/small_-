@@ -3,3 +3,4 @@ access_dealer_record_user,dealer.record,model_dealer_record,base.group_user,1,1,
 access_prodcut_image_user,product.image,model_product_image,base.group_user,1,1,1,1
 access_logistic_company_user,logistic.company,model_logistic_company,base.group_user,1,1,1,1
 access_send_goods_user,send.goods,model_send_goods,base.group_user,1,1,1,1
+access_update_logistic_company_user,update.logistic.company,model_update_logistic_company,base.group_user,1,1,1,1

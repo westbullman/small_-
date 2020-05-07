@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError, RedirectWarning, ValidationError
 
 class ProductProduct(models.Model):
 
@@ -8,11 +9,12 @@ class ProductProduct(models.Model):
 
     images = fields.One2many('product.image','product_id',string='产品图片')
     hot_product = fields.Boolean(string='是否是热门产品', default=False)
-    _sql_constrains = [
-        ("product_unique_product_id",
-         "UNIQUE(product_id)",
-         "产品编码必须唯一!"),
-    ]
+
+    @api.one
+    @api.constrains('default_code')
+    def _check_default_code(self):
+        if self.search_count([('default_code', '=', self.default_code)]) > 1:
+            raise ValidationError(_("该产品编码已经存在,请更换!"))
 
 
 class ProductImage(models.Model):

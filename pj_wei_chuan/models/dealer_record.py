@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError, RedirectWarning, ValidationError
 
 class DealerRecord(models.Model):
 
@@ -18,6 +19,17 @@ class DealerRecord(models.Model):
     state_id = fields.Many2one("res.country.state", string='State')
     country_id = fields.Many2one('res.country', string='Country')
     mobile = fields.Char(string='手机')
+    bianma = fields.Char(string='编码')
+    partner_ids = fields.One2many('res.partner','dealer_id',string='渠道商')
+
+
+    @api.one
+    @api.constrains('bianma')
+    def _check_bianma(self):
+        if self.search_count([('bianma','=',self.bianma)]) >1:
+            raise ValidationError(_("该编码已经存在,请更换!"))
+
+
 
 
 

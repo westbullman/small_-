@@ -3,10 +3,21 @@
 
     <!--热门产品-->
     <record id="action_hot_product" model="ir.actions.act_window">
-        <field name="name">Hot Product</field>
+        <field name="name">热门产品</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="domain">[('hot_product','=',True)]</field>
+        <field name="context">{'hot_product':True}</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!--普通产品-->
+    <record id="action_normal_product" model="ir.actions.act_window">
+        <field name="name">普通产品</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('hot_product','=',False)]</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -18,18 +29,32 @@
     <menuitem name="热门产品"
         id="hot_product_product"
         action="action_hot_product"
-        parent = "pj_weichuang.base_record"
+        parent = "pj_wei_chuan.base_record"
         sequence="1"/>
+
+    <menuitem name="普通产品"
+        id="menu_normal_product"
+        action="action_normal_product"
+        parent = "pj_wei_chuan.base_record"
+        sequence="2"/>
 
     <menuitem name="物流公司"
         id="menu_logistic_company"
         action="action_logistic_company"
-        parent = "pj_weichuang.base_record"
-        sequence="2"/>
+        parent = "pj_wei_chuan.base_record"
+        sequence="3"/>
+
+    <menuitem name="更新物流公司"
+        id="menu_update_logistic_company"
+        action="action_update_logistic_company_wizard"
+        parent = "pj_wei_chuan.base_record"
+        sequence="4"/>
+
+
 
     <!--渠道商-->
     <record id="action_channel_provider" model="ir.actions.act_window">
-        <field name="name">Channel Provider</field>
+        <field name="name">渠道商</field>
         <field name="res_model">res.partner</field>
         <field name="view_type">form</field>
         <field name="domain">[('customer','=',True)]</field>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_update_logistic_company_form" model="ir.ui.view">
+            <field name="name">更新物流公司</field>
+               <field name="model">update.logistic.company</field>
+                <field name="arch" type="xml">
+                    <form string="更新物流公司">
+                        <p class="oe_grey">
+                            开始更新物流公司
+                        </p>
+                        <footer>
+                            <button name="confirm" string="确定更新" type="object" class="oe_highlight" />
+                            <button special="cancel" string="取消" class="btn-primary"/>
+                        </footer>
+                    </form>
+                </field>
+        </record>
+
+        <record id="action_update_logistic_company_wizard" model="ir.actions.act_window">
+            <field name="name">Update Logistic Company</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">update.logistic.company</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_update_logistic_company_form"/>
+            <field name="target">new</field>
+        </record>
+</odoo>
