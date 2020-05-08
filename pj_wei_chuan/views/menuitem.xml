@@ -51,6 +51,20 @@
         sequence="4"/>
 
 
+    <!--产品种类-->
+    <record id="action_weichuang_product_category" model="ir.actions.act_window">
+        <field name="name">产品种类</field>
+        <field name="res_model">product.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="产品种类"
+        id="menu_product_category_weichuang"
+        action="action_weichuang_product_category"
+        parent = "pj_wei_chuan.base_record"
+        sequence="5"/>
+
 
     <!--渠道商-->
     <record id="action_channel_provider" model="ir.actions.act_window">

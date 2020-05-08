@@ -35,6 +35,7 @@
         "views/res_partner.xml",
         "wizard/send_goods.xml",
         "views/sale_order.xml",
+        "views/product_category.xml",
     ],
     # "demo": [
     #     'demo/export_demo.xml',

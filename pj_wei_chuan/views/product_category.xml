@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--产品分类form视图-->
+   <record id="weichuang_product_category" model="ir.ui.view">
+        <field name="name">weichuang.product.category.form.inherit</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+             <group name="account_property" position="before">
+                    <group>
+                        <group string="分类图片">
+                            <field name="image" widget="image" options='{"size": [100, 100]}'/>
+                        </group>
+                    </group>
+             </group>
+        </field>
+    </record>
+
+</odoo>

@@ -4,6 +4,7 @@ from . import product_product
 from . import res_partner
 from . import logistic_company
 from . import sale_order
+from . import product_category
 
 
 
