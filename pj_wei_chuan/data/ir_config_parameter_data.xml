@@ -5,5 +5,21 @@
             <field name="key">高德key</field>
             <field name="value"></field>
         </record>
+
+        <record id="wechat_appid" model="ir.config_parameter">
+            <field name="key">微信小程序的Appid</field>
+            <field name="value"></field>
+        </record>
+
+        <record id="wechat_secret" model="ir.config_parameter">
+            <field name="key">微信小程序的secret</field>
+            <field name="value"></field>
+        </record>
+
+        <record id="wechat_access_token" model="ir.config_parameter">
+            <field name="key">微信小程序的token</field>
+            <field name="value"></field>
+        </record>
+
     </data>
 </odoo>
